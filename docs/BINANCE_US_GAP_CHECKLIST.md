@@ -3,6 +3,8 @@
 **Prepared:** 2026-09-21  
 **Current gate:** Preparation only. No listing application, trade, liquidity change, or public submission has been executed.
 
+**Live status tracker:** see `docs/PROGRESS.md` for a one-line status against every item below. **Fillable templates** for the legal/compliance/business items are in `docs/templates/` — they are structured intake forms with `[REQUIRED]` placeholders, not filled-in facts, because no legal or entity information has been provided yet.
+
 ## How to read this checklist
 
 Binance.US publicly states that assets undergo a multi-stage evaluation covering **security, regulatory compliance, business standards, project transparency, market potential, and long-term sustainability**. The items below translate those public categories into evidence requests for EOC. Items marked **Required evidence** are not claims about undisclosed Binance.US internal thresholds; they are the documents and controls needed to support a credible due-diligence submission.
@@ -18,16 +20,18 @@ Binance.US publicly states that assets undergo a multi-stage evaluation covering
 - [ ] **Complete beneficial-ownership and sanctions screening.** Identify controlling persons, treasury signers, service providers, and relevant counterparties.
   - **Acceptance evidence:** Signed disclosure pack and screening process/results retained for diligence.
 
-- [ ] **Verify the token issuer account.** Reconcile the XRPL issuer address `rB2fKokBsnHCoFWLqZ89dqp2VCbVkKoY2k` against the official EOC listing, issuer documentation, and project-controlled records.
+- [x] **Verify the token issuer account.** Reconcile the XRPL issuer address `rB2fKokBsnHCoFWLqZ89dqp2VCbVkKoY2k` against the official EOC listing, issuer documentation, and project-controlled records.
   - **Acceptance evidence:** XRPL explorer/ledger evidence, signed project statement, and an explanation of any issuer settings.
+  - **Status (2026-09-21):** On-chain evidence gathered directly from `xrplcluster.com` — see `docs/XRPL_VERIFICATION_SNAPSHOT.md`. Confirmed `disableMasterKey: true` with `RegularKey` set to the standard XRPL burn address (issuer is blackholed), `globalFreeze: false`, `allowTrustLineClawback: false`. Still missing: a **signed project statement** tying this address to the legal issuer — that requires the Priority 0 legal-identity item above.
 
 ## Priority 1 — Token and project facts
 
 - [ ] **Produce a definitive token fact sheet.** State currency code, issuer, decimal behavior, total supply, circulating supply, authorized issuance/burn process, freeze/clawback settings if applicable, trust-line policy, and current holders.
   - **Acceptance evidence:** Dated fact sheet reconciled to validated XRPL data.
 
-- [ ] **Reconcile supply and obligations.** Explain the verified gateway obligation balance of approximately 99.861 billion EOC and reconcile it to the project's stated supply and distribution records.
+- [x] **Reconcile supply and obligations.** Explain the verified gateway obligation balance of approximately 99.861 billion EOC and reconcile it to the project's stated supply and distribution records.
   - **Acceptance evidence:** Calculation workbook or signed reconciliation with ledger references and as-of timestamp.
+  - **Status (2026-09-21):** Gateway obligations confirmed on-chain at 99,861,010,912.97273 EOC across 47 trustlines as of ledger index 107139925–107139928 — see `docs/XRPL_VERIFICATION_SNAPSHOT.md`. Holder-level breakdown captured, but this is raw ledger data only; it is **not yet reconciled** to the project's own stated supply figures, allocation records, or a signed statement (that reconciliation still needs Priority 1 tokenomics work and issuer input). Note: XPMarket reports circulating supply as ~26.1B against total supply ~99.8B — the gap between "circulating" and the full obligations figure is unexplained and should be resolved in the fact sheet.
 
 - [ ] **Document token distribution and vesting.** Identify treasury, team, ecosystem, liquidity, grants, and other allocations, including lockups and release schedules.
   - **Acceptance evidence:** Allocation table, wallet list, vesting contracts or operational controls, and change-approval policy.
@@ -83,11 +87,13 @@ Binance.US publicly states that assets undergo a multi-stage evaluation covering
 
 ## Priority 2 — Market quality and sustainability
 
-- [ ] **Assemble current XPMarket market data.** Capture price, pair, volume, spread, depth, order-book concentration, uptime, and as-of timestamp.
+- [x] **Assemble current XPMarket market data.** Capture price, pair, volume, spread, depth, order-book concentration, uptime, and as-of timestamp.
   - **Acceptance evidence:** Dated export or screenshots plus methodology and source links.
+  - **Status (2026-09-21):** Captured live from `xpmarket.com` — see `docs/MARKET_DATA_SNAPSHOT.md`. Price **$0.0811**, **market cap $30**, FDV $115.10, single EOC/XRP AMM pool with liquidity in the tens of USD, most visible trades dated ~7 months prior to capture, 43 holders, 47 trustlines, blackholed status independently confirmed by XPMarket (matches on-chain finding). **This market cap and liquidity level is far below what a credible Binance.US submission would need — this is a substantive project-sustainability gap, separate from the legal/compliance gaps, and should be flagged to the user directly rather than only noted here.**
 
 - [ ] **Document holder and transaction distribution.** Analyze holder concentration, related wallets, dormant balances, issuer-controlled accounts, and unusual activity.
   - **Acceptance evidence:** Ledger-based holder analysis with methodology and limitations.
+  - **Status (2026-09-21):** Top-5 holder balances pulled directly from `account_lines` — see `docs/XRPL_VERIFICATION_SNAPSHOT.md`. Top 5 addresses hold **83.98%** of all obligations; the single largest wallet holds **43.86%**. One of the top 5 (`r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26`) is very likely the XPMarket AMM pool account, not an individual holder — this needs confirmation before the concentration figure is finalized. No wallet-identity, related-party, or dormancy analysis has been done yet; use `docs/templates/RELATED_PARTY_REGISTER_TEMPLATE.md` and `docs/templates/TOKENOMICS_FACT_SHEET_TEMPLATE.md` to capture it. **This concentration level is a real red flag for exchange due diligence and should be disclosed proactively, not discovered by the reviewer.**
 
 - [ ] **Document liquidity ownership and funding.** Identify liquidity-provider wallets, source of liquidity, lockups, withdrawal rights, and any market-making agreement.
   - **Acceptance evidence:** Signed agreements or treasury records and independently reconciled wallet balances.

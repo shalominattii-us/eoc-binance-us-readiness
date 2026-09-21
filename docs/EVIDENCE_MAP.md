@@ -24,3 +24,16 @@ The source set demonstrates a named treasury architecture and several operationa
 ## Controls still required before claiming operational custody
 
 A production claim would require a defined legal custodian, segregated wallets, key-generation and recovery procedures, multi-party approval, hardware-security-module or equivalent controls, transaction policy enforcement, independent reconciliation, immutable audit logs, incident response, withdrawal controls, and an external security review. Those controls must be evidenced rather than inferred from repository names or policy text.
+
+## Verification actually performed (2026-09-21)
+
+The verifier was run against live XRPL data and the public XPMarket page was checked directly. Full detail is in `docs/XRPL_VERIFICATION_SNAPSHOT.md` and `docs/MARKET_DATA_SNAPSHOT.md`. Summary of new findings:
+
+- **Issuer is blackholed** (master key disabled, regular key set to the XRPL standard burn address `rrrrrrrrrrrrrrrrrrrrrhoLvTp`). Confirmed both on-chain and independently by XPMarket's `Blackholed: YES` flag. This means the token's supply and issuer settings are now permanently fixed — a genuine, citable positive fact, but it also means no one can ever fix, migrate, or upgrade the issuer account.
+- **Total obligations**: 99,861,010,912.97273 EOC across 47 trustlines — reconciles with the figure the checklist already referenced.
+- **Holder concentration**: top 5 wallets hold ~84% of supply (top 1 alone holds ~44%). This was previously undocumented anywhere in the repository set and is a required disclosure item (`docs/templates/RELATED_PARTY_REGISTER_TEMPLATE.md`, `docs/templates/TOKENOMICS_FACT_SHEET_TEMPLATE.md`).
+- **Market data**: current market cap is **$30**, FDV **$115**, liquidity in the tens of USD, with no recent trading activity observed at capture time. This is a material, honest finding that materially undercuts any near-term Binance.US market-potential case in the token's current state.
+
+## New templates added for items requiring real (non-fabricated) input
+
+See `docs/templates/` and `docs/PROGRESS.md` for the full list and status against `docs/BINANCE_US_GAP_CHECKLIST.md`.
