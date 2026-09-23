@@ -23,7 +23,7 @@
 | Item | Status | Evidence / template |
 |---|---|---|
 | Produce a definitive token fact sheet | 📝 Partially evidenced | `docs/templates/TOKENOMICS_FACT_SHEET_TEMPLATE.md` — verified on-chain fields pre-filled (issuer flags, obligations, holder table); allocation/vesting/utility fields `[REQUIRED]` |
-| Reconcile supply and obligations | ✅ Evidenced (raw), not reconciled | `docs/XRPL_VERIFICATION_SNAPSHOT.md` — 99,861,010,912.97273 EOC obligations confirmed on-chain. Not yet reconciled to project's own stated supply/allocation records (circulating supply per XPMarket is ~26.1B vs. ~99.8B total — gap unexplained) |
+| Reconcile supply and obligations | ✅ Evidenced (raw); plausible explanation found, not confirmed | `docs/XRPL_VERIFICATION_SNAPSHOT.md` — 99,861,010,912.97273 EOC obligations confirmed on-chain. **2026-09-23 update:** excluding the AMM pool's holdings, the top 4 remaining holder wallets sum to 73.78% of supply, and total minus those 4 wallets = 26.18B — within 0.3% of XPMarket's reported 26.1B circulating figure. Strong circumstantial match, but the project/XPMarket has not confirmed this methodology and the 4 wallets have no disclosed identity yet (treasury? team? escrow?) — still not a confirmed reconciliation, needs project/counsel confirmation |
 | Document token distribution and vesting | ⬜ Not started | No allocation table or wallet list obtained yet; use `docs/templates/TOKENOMICS_FACT_SHEET_TEMPLATE.md` |
 | Explain holder rights and token utility | ⬜ Not started | No template yet distinct from whitepaper/website templates below |
 | Document conflicts and related-party arrangements | 📝 Template ready | `docs/templates/RELATED_PARTY_REGISTER_TEMPLATE.md` — all fields `[REQUIRED]` |
@@ -56,8 +56,8 @@
 | Item | Status | Evidence / template |
 |---|---|---|
 | Assemble current XPMarket market data | ✅ Evidenced | `docs/MARKET_DATA_SNAPSHOT.md` — price, market cap ($30), FDV, holders, trustlines, AMM pool captured live with screenshot |
-| Document holder and transaction distribution | 📝 Partially evidenced | `docs/XRPL_VERIFICATION_SNAPSHOT.md` has top-5 holder balances (83.98% combined, top wallet 43.86%); no wallet-identity, dormancy, or related-party mapping yet — use `docs/templates/RELATED_PARTY_REGISTER_TEMPLATE.md` |
-| Document liquidity ownership and funding | ⬜ Not started | AMM pool account identified (`r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26`) but no agreement, lockup, or funding-source documentation exists |
+| Document holder and transaction distribution | 📝 Partially evidenced | `docs/XRPL_VERIFICATION_SNAPSHOT.md` has top-5 holder balances (83.98% combined, top wallet 43.86%). **2026-09-23:** confirmed on-chain that rank-3 holder `r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26` is the AMM pool account itself (via `pseudo_account.type: AMM` and `amm_info`), not a private holder — excluding it, the real top-4 wallets hold 73.78% combined. No wallet-identity, dormancy, or related-party mapping yet for those 4 — use `docs/templates/RELATED_PARTY_REGISTER_TEMPLATE.md` |
+| Document liquidity ownership and funding | ⬜ Not started (pool state confirmed) | AMM pool account `r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26` confirmed on-chain (7.64 XRP + 10.18B EOC, 0.5% fee, voting slot held by `rXPMxDRxMM6JLk8AMVh569iap3TtnjaF3`); no agreement, lockup, or funding-source documentation exists |
 | Prepare a market-integrity policy | 📝 Template ready | `docs/templates/MARKET_INTEGRITY_POLICY_TEMPLATE.md` — policy skeleton, no monitoring rules defined |
 | Prepare sustainability evidence | ⬜ Not started | No operating plan or financial records obtained; current market cap ($30) and liquidity level are a real, verified obstacle here — see `docs/MARKET_DATA_SNAPSHOT.md` |
 

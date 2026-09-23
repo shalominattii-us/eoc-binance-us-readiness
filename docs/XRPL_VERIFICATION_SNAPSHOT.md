@@ -54,7 +54,40 @@ This reconciles with the ~99.861 billion EOC figure referenced in `BINANCE_US_GA
 - **Top 1 holder: 43.86% of supply.**
 - **Top 5 holders combined: 83.98% of supply.**
 - 42 remaining trustlines share the remaining ~16%.
-- Account `r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26` (rank 3) is also the EOC/XRP AMM pool account per XPMarket — some of its balance is pooled liquidity, not a single private holder. This should be confirmed and annotated before citing the figure externally.
+
+### Update (2026-09-23) — AMM pool account confirmed
+
+Directly queried `account_info` and `amm_info` for `r4jLfSSKK1GG7b3ZUKQ8ha4swvEftpFN26` at validated ledger index `107169789`:
+
+- `account_info` returns `"pseudo_account": {"type": "AMM"}` and an `AMMID`, which XRPL only sets on AMM pool accounts — this is **not** a private holder wallet.
+- `amm_info` confirms it is the EOC/XRP AMM pool: pool holds `7.639367 XRP` and `10,180,845,598.01736 EOC`, LP token issued by the pool itself, trading fee 0.5%, voting/auction slot controlled by `rXPMxDRxMM6JLk8AMVh569iap3TtnjaF3` (the XPMarket protocol account).
+- The ~7.64 XRP pool balance (≈ $12 at $1.57/XRP observed on XPMarket at capture time) matches the "tens of dollars of liquidity" finding in `MARKET_DATA_SNAPSHOT.md`.
+
+So of the top-5 trustline holders, **one (rank 3, 10.19%) is the AMM pool itself**, not an individual or entity holding tokens off-market. Excluding it, the top-4 *actual* holder wallets are:
+
+| Rank (excl. AMM) | Account | Balance (EOC) | % of total supply |
+|---|---|---|---|
+| 1 | `rwB7JKKc5gJ47pPnWCFvQuhVW85mejYF1M` | 43,802,031,550.23 | 43.86% |
+| 2 | `rJ3YA6iFaVXtQgEgnmFGLJ8RZP3NJJtyPQ` | 13,329,665,467.58 | 13.35% |
+| 3 | `rp96cRjU8g8PcrURbZGgByy5TK2VhTYcbN` | 10,000,000,000.00 | 10.01% |
+| 4 | `rKHT6j1mewHb9iy5Dpk34nRygu69YbKVPB` | 6,549,135,446.00 | 6.56% |
+
+Combined: **73.78%** of total obligations sit in these four wallets alone. No public identity, tag, or disclosure exists yet for any of the four — that is required Priority 0/1 work (beneficial-ownership screening and the related-party register), not something this on-chain read can establish.
+
+### Update (2026-09-23) — likely explanation for the circulating-vs-total supply gap
+
+XPMarket reports circulating supply as **~26.1B EOC** against total obligations of **~99.86B EOC** (see `MARKET_DATA_SNAPSHOT.md`), a gap this document previously flagged as unreconciled. Arithmetic check against the four non-AMM top holders above:
+
+```
+99,861,010,912.97 (total obligations)
+− 43,802,031,550.23 (holder 1)
+− 13,329,665,467.58 (holder 2)
+− 10,000,000,000.00 (holder 3)
+−  6,549,135,446.00 (holder 4)
+= 26,180,178,449.16 EOC remaining
+```
+
+`26,180,178,449.16` is within ~0.3% of XPMarket's reported `26.1B` circulating figure. This strongly suggests XPMarket's circulating-supply calculation **excludes exactly these four wallets** (and counts the AMM pool's holdings and all smaller holders as "circulating"). This is a plausible, well-supported hypothesis based on independently reproducible ledger arithmetic — **it is not a confirmed fact** until the project or XPMarket states its actual methodology and the identity/purpose of the four wallets (e.g., treasury, team, escrow) is disclosed. Do not present this as a confirmed reconciliation in any external submission without that confirmation.
 
 This level of concentration is a material fact for the checklist's "Document holder and transaction distribution" and "Document liquidity ownership and funding" items. It has not previously been documented anywhere in this repository set.
 
