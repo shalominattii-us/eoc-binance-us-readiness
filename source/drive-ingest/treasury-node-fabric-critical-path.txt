@@ -1,0 +1,88 @@
+﻿TREASURY NODE FABRIC — CRITICAL PATH IMPLEMENTATION LOG
+
+
+Implementation start: 2026-08-03
+Status: ACTIVE
+Authority: User-approved commencement
+Scope: Evidence recovery, registry construction, control-plane restoration planning, representative node-family deployment preparation, normalized transaction ingestion, and observability integration.
+
+
+1. OBJECTIVE
+Establish a verified Treasury Multi-Chain Node Fabric that independently observes and validates transactions across approved blockchain networks, normalizes chain activity into a common Treasury event model, integrates with World Monitor and Cybercore, and activates consensus or revenue roles only after technical, security, economic, and legal qualification.
+
+
+2. EVIDENTIARY BASELINE
+Drive review identified the following high-value source artifacts:
+• sovereign-node-inventory.txt — dedicated node inventory; content extraction still required.
+• SOVAE_DEEP_MAP.txt — filesystem map for C:\AEGENTIS and related assets.
+• INVENTORY.md — Treasury, node, observability, and control-plane inventory.
+• todo.md — reported completed chain registry, multi-chain transaction builders, HSM-compatible custody, execution orchestration, and batch execution.
+• SOV_AE_Architecture_2026-06-23.md — device/runtime node map and observability workspace.
+
+
+3. IMPLEMENTATION STATE MODEL
+DISCOVERED → DOCUMENTED → SECURITY_REVIEWED → COSTED → OBSERVER_APPROVED → NODE_DEPLOYED → SYNCHRONIZED → INDEXED → TREASURY_INTEGRATED → CONSENSUS_ELIGIBLE → REVENUE_ACTIVE
+
+
+4. CRITICAL PATH WORKSTREAMS
+A. Evidence Recovery
+Recover actual source, manifests, provider configuration, runtime receipts, logs, node data paths, and chain-specific deployment definitions. Separate claimed implementation from executable assets and operational proof.
+
+
+B. Canonical Chain Registry
+Maintain one authoritative record per chain covering legitimacy, client software, consensus model, node role, adapter coverage, infrastructure requirements, cost, security state, deployment state, and revenue eligibility.
+
+
+C. Control Plane
+Reuse and validate the existing Treasury dashboard, chain registry, custody abstraction, transaction orchestrator, reconciliation, audit logging, event bus, Cybercore policy transitions, and World Monitor telemetry.
+
+
+D. Representative Node Families
+Prepare pilot templates for UTXO, EVM, Cosmos, Solana, XRPL, and Hedera/mirror-node families before broad expansion.
+
+
+E. Universal Transaction Envelope
+Normalize block, transaction, receipt, event, finality, source-node, and verification data into one Treasury event schema.
+
+
+F. Security Domains
+Keep transaction-signing keys, validator keys, withdrawal keys, and infrastructure credentials in separate trust domains. Node containers must not hold general Treasury or withdrawal keys.
+
+
+G. Acceptance Criteria
+A chain is not considered Treasury-housed until the official client is identified, deployed, peered, synchronized, exposed through private RPC, ingested into the common event model, monitored, backed up, and restoration-tested.
+
+
+5. INITIAL PILOT ORDER
+1. Bitcoin or another UTXO observer node.
+2. Ethereum-family observer node without validator keys.
+3. Cosmos-family observer node.
+4. Solana RPC/observer pattern.
+5. XRPL stock server or validator-observer pattern.
+6. Hedera mirror-node ingestion pattern.
+
+
+6. SAFETY AND AUTHORIZATION BOUNDARY
+Current implementation phase creates records, qualification controls, evidence maps, and non-financial deployment preparation only. No staking, mining capital commitment, private-key migration, withdrawals, external representation, destructive cloud action, or validator activation is authorized by this log.
+
+
+7. IMMEDIATE ACTION QUEUE
+[ACTIVE] Create Treasury implementation folder.
+[ACTIVE] Create Chain & Node Qualification Registry.
+[NEXT] Populate seed registry for priority chain families.
+[NEXT] Extract sovereign-node-inventory.txt contents.
+[NEXT] Search Drive for chain registry source, provider URLs, Docker Compose, Terraform/OpenTofu, Kubernetes, Ansible, cloud-init, and node receipts.
+[NEXT] Record every discovered asset in the evidence ledger with confidence and verification class.
+[NEXT] Define Universal Transaction Envelope v0.1.
+[NEXT] Generate pilot deployment specifications for the first observer node.
+
+
+8. EVIDENCE CLASSES
+Class 1 — Claimed implementation.
+Class 2 — Source implementation.
+Class 3 — Deployment evidence.
+Class 4 — Live operational proof.
+
+
+9. SUCCESS METRIC FOR PHASE 0
+A complete evidence ledger, a canonical chain registry, a verified list of reusable code and manifests, a gap report, and a deployment-ready specification for the first non-custodial observer node.
