@@ -57,8 +57,9 @@ Binance.US publicly states that assets undergo a multi-stage evaluation covering
 - [ ] **Create an incident and disclosure policy.** Define how security incidents, material changes, supply events, and custody failures will be communicated.
   - **Acceptance evidence:** Public policy, escalation contacts, and response-time commitments.
 
-- [ ] **Reconcile GitHub claims with implementation.** Replace or qualify repository statements that describe components as confirmed or deployed when the checkout contains documentation, encoded scripts, placeholders, or incomplete code.
+- [x] **Reconcile GitHub claims with implementation.** Replace or qualify repository statements that describe components as confirmed or deployed when the checkout contains documentation, encoded scripts, placeholders, or incomplete code.
   - **Acceptance evidence:** Repository audit report and corrected READMEs.
+  - **Status (2026-09-23):** Audit performed against the public repos via the GitHub API — see `docs/GITHUB_CLAIMS_AUDIT.md`. Confirmed: `sovereign-eoc`'s `kernel.ps1` and `worlds.ps1` print the literal word "Stub" and do nothing else; every treasury address across ~30 chains in `tsl-ledger-interface`'s registry is an unfilled placeholder (`0xTSLxxxx...` pattern) and its `/balance/:address` endpoint hard-codes `esc: 0, xrp: 0` for any input; `sovereign-custody` and `sovereign-governance` contain byte-identical (sha256-matched) generic utility files and no module-specific implementation despite READMEs each claiming "Build State: ΩΩΩ POST (Confirmed)." **Audit report is done; corrected READMEs are not** — that edit has to happen in each of those five separate repositories, not this one, and hasn't been done yet.
 
 ## Priority 1 — Security and operational custody
 

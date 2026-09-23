@@ -36,7 +36,7 @@
 | Publish a substantive whitepaper or technical paper | 📝 Template ready | `docs/templates/WHITEPAPER_TEMPLATE.md` — section skeleton, all facts `[REQUIRED]` |
 | Publish a roadmap with delivery status | 📝 Template ready | `docs/templates/ROADMAP_TEMPLATE.md` — status categories defined, no milestones filled |
 | Create an incident and disclosure policy | 📝 Template ready | `docs/templates/INCIDENT_DISCLOSURE_POLICY_TEMPLATE.md` — policy skeleton, contacts/SLAs `[REQUIRED]` |
-| Reconcile GitHub claims with implementation | ⬜ Not started | Requires a repo-by-repo audit of `sovereign-eoc`, `tsl-ledger-interface`, `sovereign-custody`, `sovereign-escrow`, `sovereign-governance` — not yet performed in this session |
+| Reconcile GitHub claims with implementation | ✅ Audit done; READMEs not yet corrected | `docs/GITHUB_CLAIMS_AUDIT.md` — confirmed `sovereign-eoc` kernel/worlds are literal stubs, `tsl-ledger-interface` treasury addresses are 100% placeholders and its balance endpoint hard-codes zero, `sovereign-custody`/`sovereign-governance` are byte-identical generic files with no module-specific code despite "Confirmed" claims. `sovereign-escrow`'s and `tsl-ledger-interface`'s minter function bodies not fully traced — left as open/unverified, not guessed at. Actually correcting the READMEs requires edits in those five separate GitHub repos, not this one |
 
 ## Priority 1 — Security and operational custody
 
