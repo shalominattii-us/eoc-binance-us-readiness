@@ -1,6 +1,6 @@
 # EOC Binance.US Readiness — Progress Tracker
 
-**Last updated:** 2026-09-21
+**Last updated:** 2026-09-25
 **Purpose:** One-line status for every item in `docs/BINANCE_US_GAP_CHECKLIST.md`, so anyone opening this repo can see at a glance what is evidenced, what has a template ready to fill, and what has not been started. This file does not itself contain legal, business, or entity facts — see the "No fabricated facts" note below.
 
 ## Legend
@@ -79,4 +79,9 @@ Every `[REQUIRED]` field in every template in `docs/templates/` is intentionally
 1. **No legal/entity facts provided.** All Priority 0 legal items are blocked on the user or counsel supplying real information.
 2. **Market cap and liquidity are extremely low** ($30 market cap, single AMM pool with tens of USD of liquidity, most visible trades ~7 months old at capture time). This is a genuine sustainability gap, independent of the paperwork gaps, and should be addressed before a submission is credible.
 3. **Holder concentration is high**: top 5 wallets hold 83.98% of obligations, top 1 wallet alone holds 43.86%. One of the top 5 is likely the AMM pool itself and needs to be excluded/confirmed before this figure is finalized.
-4. **GitHub push pending.** This progress and the new templates/snapshots exist only in the local working copy; they have not been pushed to `shalominattii-us/eoc-binance-us-readiness` because a GitHub token has not been provided yet.
+4. **Repository publication is complete.** The readiness repository is public and now includes the reviewed Gmail/Drive source records, multi-account ingestion status, security-ingestion audit, external SkillOpt source note, and the historical stack-engine architecture record. Publication does not resolve the legal, tokenomics, custody, market-quality, or submission gaps above.
+
+## Historical and security records
+
+- `docs/history/EOC_STACK_ENGINE_HISTORY.md` preserves the user-provided multi-agent stack-engine proposal as historical architecture context, not deployment evidence.
+- `docs/SECURITY_INGEST_AUDIT.md` records the PAT redaction and repository credential-pattern audit. The token owner still needs to revoke or rotate the exposed token.
